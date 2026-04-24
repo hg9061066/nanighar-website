@@ -4,7 +4,7 @@ import "./globals.css";
 
 const quicksand = Quicksand({ 
   subsets: ["latin"],
-  variable: '--font-quicksand' 
+  variable: "--font-quicksand",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +19,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="scroll-smooth">
-      <body className={`${quicksand.variable} font-sans`}>{children}</body>
+      <body className={`${quicksand.variable} font-sans`}>
+
+        {/* 🎵 Background Music */}
+        <audio autoPlay loop muted id="bg-music">
+          <source src="/audio/bg-music.mp3" type="audio/mpeg" />
+        </audio>
+
+        {children}
+
+      </body>
     </html>
   );
 }
